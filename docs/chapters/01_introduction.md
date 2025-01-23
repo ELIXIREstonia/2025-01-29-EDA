@@ -1,138 +1,134 @@
-Git is a powerful distributed version control system that allows multiple people to work on a project simultaneously without overwriting each other's changes. It keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.
+# Introduction to Exploratory Data Analysis (EDA) with R
 
-In this course, participants will learn:  
-- The basics of Git and version control  
-- How to set up and configure Git  
-- How to create and manage repositories  
-- Branching and merging strategies  
-- Collaboration workflows using Git
+Welcome to the "Introduction to Exploratory Data Analysis (EDA) with R" workshop! This one-day course is designed for graduate-level learners without a computational background. Our goal is to equip you with the foundational skills needed to summarize, visualize, and interpret data effectively.
 
-## Core Concepts of Git
+## What is EDA?
 
-Git is a distributed version control system that allows each user to have their own local repository, which contains the full history of the project. This makes Git fast and flexible, as users can work offline and only need to connect to a remote repository when they want to share their changes.
+Exploratory Data Analysis (EDA) is an essential first step in any data analysis workflow. It involves summarizing the main characteristics of a dataset, often using visual methods. EDA helps you understand the data, uncover patterns, spot anomalies, and test hypotheses.
 
-### Version Control
+## Types of Data
 
-Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. With Git, every time you save the state of your project (commit), Git takes a snapshot of all your files and stores a reference to that snapshot. If a file has not changed, Git doesn’t store the file again, just a link to the previous identical file it has already stored.
+Understanding the types of data you are working with is crucial for effective analysis. Data can generally be categorized into two main types:
 
-### Three States of Files
+### Numerical Data
 
-In Git, files can reside in one of three states[@git_book2014]:  
-- **Working Directory**: The files that you see in your file system. These are the files that you are currently working on.  
-- **Staging Area**: A file that has been marked to be included in the next commit. The staging area allows you to prepare a set of changes before committing them to the repository. This gives you more control over what changes are included in each commit.  
-- **Repository (.git directory)**: The committed files that are safely stored in your local Git repository.
+Numerical data represents quantities and can be further divided into:  
+- **Continuous Data**: Data that can take any value within a range (e.g., height, weight).  
+- **Discrete Data**: Data that can only take specific values (e.g., number of students in a class).
 
-The workflow in Git typically involves moving files between these three states.  
-&emsp;1. You modify files in your working directory.  
-&emsp;2. You stage them to the staging area.  
-&emsp;3. you then commit them to the repository.
+### Categorical Data
 
-!!! note "Note"
-    Commiting should be part of your daily workflow when working on a project. It is a good practice to commit your changes whenever you reach a logical stopping point or complete a task. 
+Categorical data represents characteristics and can be divided into:  
+- **Nominal Data**: Data with categories that do not have a natural order (e.g., gender, color).  
+- **Ordinal Data**: Data with categories that have a natural order (e.g., rankings, satisfaction levels).
 
-### Key Concepts:
-- **Repository**: A directory which contains your project work, as well as a few files (hidden by default) which are used by Git to keep track of changes.
-- **Commit**: A snapshot of your repository at a specific point in time.
-- **Branch**: A parallel version of your repository. It is contained within your repository but does not affect the primary or main branch.
-- **Merge**: The process of combining changes from different branches.
-- **Clone**: A copy of a repository that lives on your computer instead of on a website's server somewhere.
-- **Push**: Sending your committed changes to a remote repository, such as a repository hosted on GitHub.
-- **Pull**: Fetching changes from a remote repository and merging them into your local repository.
+## Primary Visualizations and Statistical Summaries
 
-## Working with Repositories
+Different types of data require different visualization techniques. 
 
-A Git repository can be local (on your computer) or remote (on a server). You can create a new repository from scratch, or you can clone an existing repository to get a copy of it on your local machine.
+When deciding how to visualize data, refer to:  
+- [Data-to-Viz](https://www.data-to-viz.com/): Provides guidance on choosing the right chart for specific data types and objectives.  
+- [R Graph Gallery](https://www.r-graph-gallery.com/): Offers a large collection of R graphical examples, complete with code snippets.
 
-### Creating a Repository:
-To create a new local repository, navigate to your project directory and run:
-```bash
-git init
-```
-This command creates a new subdirectory named `.git` that contains all of your necessary repository files.
+The Data-to-Viz and R Graph Gallery websites provide extensive collections of visualization examples. Each example is accompanied by an explanation of the relevant theory and example code in R. These resources can help you choose the most appropriate visualization for your data.
 
-### Cloning a Repository:
-To clone a remote repository, use the `git clone` command followed by the repository URL:
-```bash
-git clone https://github.com/user/repo.git
-```
-This command creates a directory named `repo`, initializes a `.git` directory inside it, pulls down all the data for that repository, and checks out a working copy of the latest version.
+### Introduction to `tidyverse`
 
-### Managing Repositories:
-You can add files to your repository using the `git add` command, commit changes with `git commit`, and push your changes to a remote repository with `git push`.
+The `tidyverse` is a collection of R packages designed for data science. It includes packages like `ggplot2` for data visualization, `dplyr` for data manipulation, and `tidyr` for data tidying. Throughout this workshop, we will use functions from the `tidyverse` to perform EDA.
 
-### Example Workflow:
-1. **Create a new repository**:
-    ```bash
-    mkdir myproject
-    cd myproject
-    git init
-    ```
-
-2. **Add a new file and commit it**:
-    ```bash
-    echo "Hello, Git!" > hello.txt
-    git add hello.txt
-    git commit -m "Add hello.txt"
-    ```
-
-3. **Connect to a remote repository**:
-    ```bash
-    git remote add origin https://github.com/user/myproject.git
-    git push -u origin main
-    ```
-
-4. **Make changes and push them**:
-    ```bash
-    echo "Some changes" >> hello.txt
-    git add hello.txt
-    git commit -m "Update hello.txt"
-    git push
-    ```
-
-By understanding these core concepts and commands, you'll be well on your way to mastering Git and improving your workflow.
-
-## First-Time Git Setup
-
-Before you start using Git, you need to configure some settings. These settings are stored in your Git configuration file and include your name and email address, which will be associated with your commits.
-
-### Required Git Config Commands
-
-To set up Git for the first time, you need to configure your username and email. Open your terminal and run the following commands:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
+To install and load the `tidyverse`, use the following commands:
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
 ```
 
-These commands set your name and email address for all Git repositories on your system.
+### Numerical Data
 
-### Checking Existing Configurations
+For numerical data, the following techniques are commonly used:
 
-To check your current Git configuration, use the following command:
-
-```bash
-git config --list
+- **Descriptive Statistics**: Calculate measures such as mean, median, standard deviation, and range to summarize the data.
+``` {r}
+# Calculate summary statistics
+summary(data$variable)
+data %>% summarise(mean = mean(variable), median = median(variable), sd = sd(variable))
 ```
 
-This command will display a list of all the Git configurations that are currently set.
-
-### Defining Required Configurations
-
-If you need to change any configuration, you can use the `git config` command again with the appropriate options. For example, to change your email address, you can run:
-
-```bash
-git config --global user.email "new.email@example.com"
+- **Histograms**: Visualize the distribution of the data by showing the frequency of data points within specified ranges.
+```{r}
+# Create a histogram
+ggplot(data, aes(x = variable)) + geom_histogram(binwidth = 1)
 ```
 
-### Using VS Code for Git
+- **Boxplots**: Display the distribution of the data based on a five-number summary (minimum, first quartile, median, third quartile, and maximum) and identify outliers.
+```{r}
+# Create a boxplot
+ggplot(data, aes(y = variable)) + geom_boxplot()
+```
 
-During the lessons, we will be working with Visual Studio Code (VS Code). VS Code has built-in support for Git, making it easier to manage your repositories. To configure Git in VS Code, follow these steps:
+- **Scatterplots**: Plot pairs of numerical data to identify relationships or correlations between variables.
+```{r}
+# Create a scatterplot
+ggplot(data, aes(x = variable1, y = variable2)) + geom_point()
+```
 
-1. Open VS Code.
-2. Go to the Command Palette by pressing `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac).
-3. Type `Git: Configure User Name` and press Enter. Enter your name when prompted.
-4. Type `Git: Configure User Email` and press Enter. Enter your email address when prompted.
+- **Line Graphs**: Show trends over time or ordered categories.
+```{r}
+# Create a line graph
+ggplot(data, aes(x = time, y = variable)) + geom_line()
+```
 
-By setting up these configurations, you'll be ready to start using Git effectively in your projects.
+### Categorical Data
 
-Also see using git in VS Code[@vscode2024sourcecontrol].
+For categorical data, the following techniques are commonly used:
+
+- **Frequency Tables**: Summarize the data by counting the occurrences of each category.
+```{r}
+# Create a frequency table
+table(data$category)
+data %>% count(category)
+```
+
+- **Bar Charts**: Visualize the frequency or proportion of categories using bars.
+```{r}
+# Create a bar chart
+ggplot(data, aes(x = category)) + geom_bar()
+```
+
+- **Mosaic Plots**: Show the relationship between two or more categorical variables by dividing a rectangle into proportional areas.
+```{r}
+# Create a mosaic plot
+ggplot(data) + 
+  geom_mosaic(aes(weight = count, x = product(category1), fill = category2))
+```
+
+## Concept Test
+
+Let's test your understanding of the concepts covered so far. Try to answer the following questions:
+
+1. What is the difference between continuous and discrete numerical data?
+<details>
+<summary>Answer</summary>
+Continuous data can take any value within a range (e.g., height, weight), while discrete data can only take specific values (e.g., number of students in a class).
+</details>
+
+2. What are the main differences between nominal and ordinal categorical data?
+<details>
+<summary>Answer</summary>
+Nominal data has categories without a natural order (e.g., gender, color), while ordinal data has categories with a natural order (e.g., rankings, satisfaction levels).
+</details>
+
+3. Which R package from the `tidyverse` is primarily used for data visualization?
+<details>
+<summary>Answer</summary>
+The `ggplot2` package is primarily used for data visualization in the `tidyverse`.
+</details>
+
+## Tasks
+
+To get acquainted with the Data-to-Viz website, complete the following tasks:
+
+1. Visit the [Data-to-Viz](https://www.data-to-viz.com/) website and find the recommended visualizations for a dataset containing a numerical and a categorical data, there are many obsevations per category. Which one you would choose. Can you find the R code to create that visualization (*hint: [R Graph Gallery](https://www.r-graph-gallery.com/)*)?
+
+## Conclusion
+
+In this chapter, we introduced the basics of Exploratory Data Analysis (EDA) and discussed different types of data and their visualization techniques. We also provided R code examples using the `tidyverse` package to help you get started with EDA. In the next chapters, we will dive deeper into more advanced techniques and real-world applications of EDA.

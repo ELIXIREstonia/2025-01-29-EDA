@@ -4,24 +4,27 @@
 
 !!! overview ""
     :fontawesome-regular-bookmark: **Description**  
-    Git is used across the world to help developers keep track of changes while working on different parts of the same project. Teams are not the only ones to benefit from version control: lone researchers can benefit immensely. Keeping a record of what was changed, when, and why is extremely useful for all researchers if they ever need to come back to the project later on (e.g., a year later, when memory has faded).
+    Workshop: Introduction to Exploratory Data Analysis (EDA) with R
 
-    Version control is the lab notebook of the digital world: it’s what professionals use to keep track of what they’ve done and to collaborate with other people. Every large software development project relies on it, and most programmers use it for their small jobs as well. And it isn’t just for software: books, papers, small data sets, and anything that changes over time or needs to be shared can and should be stored in a version control system.
+    Are you ready to unlock the potential of your data? This one-day workshop will introduce you to Exploratory Data Analysis (EDA)—an essential first step in any data analysis workflow. Designed for graduate-level learners without a computational background, this course will equip you with the foundational skills to summarize, visualize, and interpret data effectively.
     
     </br>
     
     :fontawesome-solid-arrow-left: **Prerequisites**  
     To be able to follow this course, learners should:  
-    &emsp;1. Bring your own laptop and install git: <https://git-scm.com/downloads>  
-    &emsp;2. install Visual Studio Code: <https://code.visualstudio.com/Download>
+    &emsp;1. Bring your own laptop and install R and RStudio (see [Setup](#setup) for details).  
+    &emsp;2. install 'tidyverse' package (in R: ```install.packages("tidyverse")```)  
     
     </br>
     
     :fontawesome-solid-arrow-right: **Learning Outcomes:**  
     By the end of the course, learners will be able to:  
-    &emsp;- Recognize version control importance  
-    &emsp;- Able to create a repository in Git  
-    &emsp;- Track changes and collaborate in Git 
+    &emsp;- Define key concepts and principles of exploratory data analysis (EDA) and explain its importance in the data analysis workflow.  
+    &emsp;- Identify and describe common types of data (numerical, categorical) and the appropriate statistical summaries and visualizations for each.  
+    &emsp;- Generate basic descriptive statistics (e.g., mean, median, standard deviation) and visualizations (e.g., histograms, scatterplots, boxplots) using R.  
+    &emsp;- Evaluate datasets for common issues, such as missing values, outliers, and inconsistencies, and apply basic techniques to address these issues (e.g., imputation, normalization).  
+    &emsp;- Interpret key results from visualizations and statistical summaries to recognize patterns, trends, and anomalies in the data.  
+    &emsp;- Propose appropriate next steps for deeper analysis or preprocessing based on findings during the exploratory data analysis process.  
     
     </br>
     
@@ -39,14 +42,14 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
 
 #### Data setup
 <!-- TODO: add some test repo here -->
-[Playground repository](https://github.com/ELIXIREstonia/2024-11-06-git-playground)  
-&emsp;- Make a fork of this repository to your own GitHub account. (make sure to uncheck the "main branch only" option)  
-&emsp;- Clone the repository to your local machine.
+&emsp;1. Download the data from [this repository](https://example.com)
 
 #### Software used in this lesson:  
-&emsp;1. [Git](https://git-scm.com/downloads)  
-&emsp;2. [Visual Studio Code](https://code.visualstudio.com/Download)
+&emsp;1. [R](https://cran.rstudio.com/) - in addition install 'tidyverse' package (```install.packages("tidyverse")```)   
+&emsp;2. [RStudio](https://posit.co/download/rstudio-desktop/)  
+&emsp;3. [Git](https://git-scm.com/downloads) - _optional, suggested_  
+&emsp;4. [Visual Studio Code](https://code.visualstudio.com/Download) - _optional_  
 
 ### Feedback
 
-Please provide feedback on this lesson [here](https://forms.gle/TgR3udwS22TMrR1R8)
+Please provide feedback on this lesson [here](https://example.com)

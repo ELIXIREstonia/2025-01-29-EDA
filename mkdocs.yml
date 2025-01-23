@@ -1,9 +1,8 @@
-site_name: ELIXIR Training Lesson on Git
+site_name: ELIXIR Training Lesson on Exploeatory Data Analysis
 nav:
     - About: index.md
     - Course Content:
       - "Introduction": chapters/01_introduction.md
-      - "Working with Git": chapters/02_working_with_git.md
       - "References": chapters/references.md
     # - "Follow up training": follow_up_training.md
 
@@ -20,8 +19,8 @@ theme:
     text: Lato
 
 # Repository
-repo_name: ELIXIREstonia/2024-11-06-git
-repo_url: https://github.com/ELIXIREstonia/2024-11-06-git
+repo_name: ELIXIREstonia/2025-01-29-EDA
+repo_url: https://github.com/ELIXIREstonia/2025-01-29-EDA
 edit_uri: edit/main/docs/
 
 plugins:
