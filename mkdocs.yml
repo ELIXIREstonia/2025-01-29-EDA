@@ -3,7 +3,10 @@ nav:
     - About: index.md
     - Course Content:
       - "Introduction": chapters/01_introduction.md
-      - "References": chapters/references.md
+      - "Workflow": chapters/02_EDA_process.md
+      - "Practice": chapters/03_practice.md
+      # - "References": chapters/references.md
+      - "Grammar of Graphics": chapters/05_grammar_of_graphics.md
     # - "Follow up training": follow_up_training.md
 
 theme:

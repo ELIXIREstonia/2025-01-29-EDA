@@ -123,11 +123,9 @@ Nominal data has categories without a natural order (e.g., gender, color), while
 The `ggplot2` package is primarily used for data visualization in the `tidyverse`.
 </details>
 
-## Tasks
+## Task
 
-To get acquainted with the Data-to-Viz website, complete the following tasks:
-
-1. Visit the [Data-to-Viz](https://www.data-to-viz.com/) website and find the recommended visualizations for a dataset containing a numerical and a categorical data, there are many obsevations per category. Which one you would choose. Can you find the R code to create that visualization (*hint: [R Graph Gallery](https://www.r-graph-gallery.com/)*)?
+Visit the [Data-to-Viz](https://www.data-to-viz.com/) website and find the recommended visualizations for a dataset containing a numerical and a categorical data, there are many obsevations per category. Which one you would choose. Can you find the R code to create that visualization (*hint: [R Graph Gallery](https://www.r-graph-gallery.com/)*)?
 
 ## Conclusion
 

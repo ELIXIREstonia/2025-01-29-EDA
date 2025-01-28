@@ -1,4 +1,4 @@
-# ELIXIR EE git training
+# ELIXIR EE Exploratory Data Analysis (EDA) with R
 
 ## Lesson overview
 
