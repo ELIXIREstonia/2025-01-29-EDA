@@ -71,6 +71,11 @@ Perform an initial exploration to get a sense of the data:
   # Boxplot
   ggplot(data, aes(y = variable)) + geom_boxplot()
   ```
+- **Outliers**: Detect outliers and decide how to handle them.
+  ```{r}
+  # Boxplot to detect outliers
+  ggplot(data, aes(y = variable)) + geom_boxplot()
+  ```
 
 ## Step 4: Data Normalization
 
@@ -129,19 +134,10 @@ Dive deeper into the data to uncover patterns and relationships:
   data_melt <- melt(cor(data[, sapply(data, is.numeric)]))
   ggplot(data_melt, aes(Var1, Var2, fill = value)) + geom_tile()
   ```
-
-## Step 6: Identify Patterns and Anomalies
-
-Look for patterns and anomalies in the data:  
 - **Trends**: Identify trends over time or across categories.
   ```{r}
   # Line plot for trends over time
   ggplot(data, aes(x = time, y = variable)) + geom_line()
-  ```
-- **Outliers**: Detect outliers and decide how to handle them.
-  ```{r}
-  # Boxplot to detect outliers
-  ggplot(data, aes(y = variable)) + geom_boxplot()
   ```
 - **Clusters**: Identify clusters or groups within the data.
   ```{r}
@@ -154,7 +150,7 @@ Look for patterns and anomalies in the data:
   ggplot(data, aes(x = variable1, y = variable2, color = cluster)) + geom_point()
   ```
 
-## Step 7: Formulate Hypotheses
+## Step 6: Formulate Hypotheses
 
 Based on your exploration, formulate hypotheses about the data:  
 - **Hypothesis Generation**: Develop hypotheses that can be tested with further analysis.  
@@ -178,7 +174,7 @@ Let's test your understanding of the EDA process. Try to answer the following qu
 1. What are the key steps involved in the EDA process?
 <details>
 <summary>Answer</summary>
-The key steps are: Understand the Data Context, Data Cleaning, Data Normalization, Initial Data Exploration, Detailed Data Exploration, Identify Patterns and Anomalies, Formulate Hypotheses, Document Findings, Conclude EDA, and Next Steps.
+The key steps are: Understand the Data Context, Data Cleaning, Initial Data Exploration, Data Normalization, Detailed Data Exploration, Formulate Hypotheses.
 </details>
 
 2. Why is it important to understand the data context before starting EDA?
@@ -190,7 +186,7 @@ Understanding the data context helps you know the objective of the analysis, the
 3. What are some common techniques for handling missing values in a dataset?
 <details>
 <summary>Answer</summary>
-Common techniques include removing rows with missing values, imputing missing values with the mean, median, or mode, and using more advanced imputation methods like k-nearest neighbors or regression imputation.
+Common techniques include removing rows with missing values, imputing missing values with the mean, median, or mode, and using more advanced imputation methods like k-nearest neighbors or regression imputation are possible, but I would avoid them if sample size allows for removal.
 </details>
 
 4. When should you consider normalizing your data, and what are common methods for normalization in R?
