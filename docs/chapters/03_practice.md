@@ -1,12 +1,12 @@
 # Practice: Exploratory Data Analysis (EDA)
 
-In this practice session, you will apply the concepts learned in the previous chapters to perform EDA on a sample dataset. You will need to download the prepared [Rmarkdown](https://github.com/ELIXIREstonia/2025-01-29-EDA/practice/notebook.Rmd) document and open it in RStudio.
+In this practice session, you will apply the concepts learned in the previous chapters to perform EDA on a sample dataset. You will need to download the prepared [Rmarkdown](https://github.com/ELIXIREstonia/2025-01-29-EDA/tree/main/practice/notebook.Rmd) document and open it in RStudio.
 
 ## Getting Started
 
-1. **Download the Rmarkdown Document**: Click [here](https://github.com/ELIXIREstonia/2025-01-29-EDA/practice/notebook.Rmd) to download the Rmarkdown (.Rmd) file to your local machine.
+1. **Download the Rmarkdown Document**: Click [here](https://github.com/ELIXIREstonia/2025-01-29-EDA/tree/main/practice/notebook.Rmd) to download the Rmarkdown (.Rmd) file to your local machine.
 
-2. **Download the Dataset**: Download the sample dataset from [here](https://github.com/ELIXIREstonia/2025-01-29-EDA/practice/data/)
+2. **Download the Dataset**: Download the sample dataset from [here](https://github.com/ELIXIREstonia/2025-01-29-EDA/tree/main/practice/data/)
 
 3. **Open RStudio**: Launch RStudio on your computer.
 
