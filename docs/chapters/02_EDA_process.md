@@ -67,9 +67,6 @@ Perform an initial exploration to get a sense of the data:
   
   # Bar chart
   ggplot(data, aes(x = category)) + geom_bar()
-  
-  # Boxplot
-  ggplot(data, aes(y = variable)) + geom_boxplot()
   ```
 - **Outliers**: Detect outliers and decide how to handle them.
   ```{r}
