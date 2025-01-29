@@ -2,6 +2,14 @@
 
 Exploratory Data Analysis (EDA) is a crucial step in the data analysis workflow. It involves examining the data to understand its main characteristics, uncover patterns, spot anomalies, and test hypotheses. This guide will help you understand where to start, the steps involved, and what to consider at each step.
 
+## Document the Process
+
+Document your findings and the steps you took during the EDA process:  
+- **Summary Report**: Create a summary report of your findings, including visualizations and key statistics.  
+- **Code Documentation**: Document the code used for data cleaning, exploration, and visualization.
+
+Excellent medium for the code and documentation is R Markdown. It allows you to combine code, text, and visualizations in a single document - [See Rstudio R Markdown Guide](https://rmarkdown.rstudio.com/) for more information.
+
 ## Step 1: Understand the Data Context
 
 Before diving into the data, it's essential to understand the context:  
@@ -37,41 +45,9 @@ Data cleaning is the process of preparing the data for analysis. This step inclu
   data$date <- as.Date(data$date, format = "%Y-%m-%d")
   ```
 
-## Step 3: Data Normalization
+Sometimes, especially for data that has been collected manually, it would be more efficient to use a dedicated tool for data cleaning, such as OpenRefine. See our [OpenRefine training materials](https://zenodo.org/records/13832071)
 
-Normalization is the process of scaling numerical data to a standard range, typically [0, 1] or [-1, 1]. This step is important when the data has different units or scales, which can affect the results of the analysis.
-
-### When to Normalize
-
-- When the data has different units or scales.  
-- Before applying machine learning algorithms that are sensitive to the scale of the data (e.g., k-means clustering, principal component analysis).  
-- Before applying statistical tests that assume normality or require standardized data.
-
-### Common R Methods for Normalization
-
-- **Min-Max Scaling**: Scales the data to a range of [0, 1].
-  ```{r}
-  # Min-Max Scaling
-  data$variable <- (data$variable - min(data$variable)) / (max(data$variable) - min(data$variable))
-  ```
-- **Z-Score Standardization**: Scales the data to have a mean of 0 and a standard deviation of 1.
-  ```{r}
-  # Z-Score Standardization
-  data$variable <- scale(data$variable)
-  ```
-- **Log Transformation**: Transforms skewed data to a more normal distribution.
-  ```{r}
-  # Log Transformation
-  data$variable <- log(data$variable + 1)
-  ```
-- **VSN Transformation**: Normalizes data using variance stabilizing normalization.
-  ```{r}
-  # VSN Transformation
-  library(vsn)
-  data$variable <- vsn::vsn2(data$variable)
-  ```
-
-## Step 4: Initial Data Exploration
+## Step 3: Initial Data Exploration
 
 Perform an initial exploration to get a sense of the data:  
 - **Summary Statistics**: Calculate summary statistics (mean, median, standard deviation, etc.) for numerical variables.
@@ -94,6 +70,40 @@ Perform an initial exploration to get a sense of the data:
   
   # Boxplot
   ggplot(data, aes(y = variable)) + geom_boxplot()
+  ```
+
+## Step 4: Data Normalization
+
+Normalization is the process of scaling numerical data to a standard range, typically [0, 1] or [-1, 1]. This step is important when the data has different units or scales, which can affect the results of the analysis.
+
+### When to Normalize
+
+- When the data has different units or scales.  
+- Before applying machine learning algorithms that are sensitive to the scale of the data (e.g., k-means clustering, principal component analysis).  
+- Before applying statistical tests that assume normality or require standardized data.
+
+### Common R Methods for Normalization
+
+- **Min-Max Scaling**: Scales the data to a range of [0, 1].
+  ```{r}
+  # Min-Max Scaling
+  data$variable_min_max <- (data$variable - min(data$variable)) / (max(data$variable) - min(data$variable))
+  ```
+- **Z-Score Standardization**: Scales the data to have a mean of 0 and a standard deviation of 1.
+  ```{r}
+  # Z-Score Standardization
+  data$variable_Z <- scale(data$variable)
+  ```
+- **Log Transformation**: Transforms skewed data to a more normal distribution.
+  ```{r}
+  # Log Transformation
+  data$variable_log <- log(data$variable + 1)
+  ```
+- **VSN Transformation**: Normalizes data using variance stabilizing normalization.
+  ```{r}
+  # VSN Transformation
+  library(vsn)
+  data$variable_vsn <- vsn::vsn2(data$variable)
   ```
 
 ## Step 5: Detailed Data Exploration
@@ -150,21 +160,11 @@ Based on your exploration, formulate hypotheses about the data:
 - **Hypothesis Generation**: Develop hypotheses that can be tested with further analysis.  
 - **Preliminary Insights**: Summarize preliminary insights and observations.
 
-## Step 8: Document Findings
-
-Document your findings and the steps you took during the EDA process:  
-- **Summary Report**: Create a summary report of your findings, including visualizations and key statistics.  
-- **Code Documentation**: Document the code used for data cleaning, exploration, and visualization.
-
-Excellent medium for the code and documentation is R Markdown. It allows you to combine code, text, and visualizations in a single document - [See Rstudio R Markdown Guide](https://rmarkdown.rstudio.com/) for more information.
-
-## Step 9: Conclude EDA
+## Next Steps
 
 Conclude the EDA process when you have a good understanding of the data:  
 - **Sufficient Exploration**: Ensure that you have sufficiently explored the data and addressed any anomalies.  
 - **Clear Insights**: Make sure you have clear insights and hypotheses to guide further analysis.
-
-## Next Steps
 
 After completing EDA, the next steps typically involve:  
 - **Hypothesis Testing**: Use statistical tests to validate your hypotheses.  
