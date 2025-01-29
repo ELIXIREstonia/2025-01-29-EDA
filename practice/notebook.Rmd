@@ -151,6 +151,8 @@ Start combining different variables and see how they relate to each other. Espec
 
 ggplot(data, aes(x = Drug, y = Diff)) + geom_violin(aes(fill = Drug))
 # Can you visualise `Drug` vs `Diff` by `Dosage`?
+
+# Explore the Data-to-Viz website for more ideas on visualisations
 ```
 
 **Task**: Run the following code and create a mosaic plot. What insights can you gain from this visualization? 
