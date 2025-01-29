@@ -1,4 +1,4 @@
-# ELIXIR EE git training
+# ELIXIR Estonia training
 
 ## If working locally
 
