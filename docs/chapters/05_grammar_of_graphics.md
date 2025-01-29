@@ -84,3 +84,5 @@ ggplot(data, aes(x = x, y = y)) +
 ```
 
 By understanding and utilizing the grammar of graphics in `ggplot2`, you can create a wide variety of visualizations to effectively communicate your data insights.
+
+To learn more about visualizing data with `ggplot2`, refer to our [Data Visualization with ggplot2](https://github.com/ELIXIREstonia/2024-10-09-R-visualisation) course.
