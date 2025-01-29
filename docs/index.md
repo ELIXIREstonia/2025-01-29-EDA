@@ -42,7 +42,7 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
 
 #### Data setup
 <!-- TODO: add some test repo here -->
-&emsp;1. Download the data from [this repository](https://example.com)
+&emsp;1. Download the data from [here](https://github.com/ELIXIREstonia/2025-01-29-EDA/tree/main/practice)
 
 #### Software used in this lesson:  
 &emsp;1. [R](https://cran.rstudio.com/) - in addition install 'tidyverse' package (```install.packages("tidyverse")```)   
@@ -50,6 +50,3 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
 &emsp;3. [Git](https://git-scm.com/downloads) - _optional, suggested_  
 &emsp;4. [Visual Studio Code](https://code.visualstudio.com/Download) - _optional_  
 
-### Feedback
-
-Please provide feedback on this lesson [here](https://example.com)
