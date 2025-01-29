@@ -163,6 +163,21 @@ ggplot(data) +
   geom_mosaic(aes(weight = Diff, x = product(Drug), fill = Happy_Sad_group))
 ```
 
+#### `Explore` package
+
+The `Explore` package is a tool meant for exploratory data analysis. It provides a set of functions that help you explore your data and generate insights. The package is designed to be user-friendly and easy to use, making it ideal for beginners and experienced users alike. Read [more](https://cran.r-project.org/web/packages/explore/vignettes/explore.html).
+
+Try it out by installing the package and running the following code:
+```{r}
+# Install the Explore package; might take a while
+install.packages("explore")
+
+# Load the Explore package
+library(explore)
+
+# Run the Explore function on the dataset
+explore(data)
+```
 
 ## Step 6: Formulate Hypotheses
 
